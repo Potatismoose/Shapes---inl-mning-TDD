@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Shapes___inlämning_TDD
 {
-    class Rectangle
+    class Rectangle : IGeometricThing
     {
         public Rectangle(float height, float width)
         {
@@ -24,7 +24,7 @@ namespace Shapes___inlämning_TDD
             return Height * Width;
         }
 
-        internal float GetPerimiter()
+        public float GetPerimeter()
         {
             if (Height <= 0 || Width <= 0)
             {

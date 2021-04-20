@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Shapes___inlämning_TDD
 {
-    class Circle
+    class Circle : IGeometricThing
     {
         public Circle(float radius)
         {
@@ -23,7 +23,7 @@ namespace Shapes___inlämning_TDD
             return MathF.PI * (MathF.Pow(Radius, 2));
         }
 
-        public float GetPerimiter()
+        public float GetPerimeter()
         {
             if (Radius <= 0)
             {

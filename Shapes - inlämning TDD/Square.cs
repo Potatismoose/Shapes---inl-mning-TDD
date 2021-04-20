@@ -2,7 +2,7 @@
 
 namespace Shapes___inlämning_TDD
 {
-    internal class Square
+    internal class Square : IGeometricThing
     {
         public Square(float side)
         {
@@ -22,7 +22,7 @@ namespace Shapes___inlämning_TDD
             return MathF.Pow(Side, ToThePowerOf);
         }
 
-        internal float GetPerimiter()
+        public float GetPerimeter()
         {
             if (Side <= 0)
             {

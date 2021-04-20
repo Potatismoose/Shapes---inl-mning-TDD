@@ -62,7 +62,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Triangle triangle = new Triangle(baseMeasure, heightMeasure);
             //Act
-            var actual = triangle.GetPerimiter();
+            var actual = triangle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),
@@ -82,7 +82,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Triangle triangle = new Triangle(baseMeasure, heightMeasure);
             //Act
-            var actual = triangle.GetPerimiter();
+            var actual = triangle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),

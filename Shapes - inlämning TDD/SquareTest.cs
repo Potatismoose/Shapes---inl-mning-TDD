@@ -54,7 +54,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Square square = new Square(side);
             //Act
-            var actual = square.GetPerimiter();
+            var actual = square.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),
@@ -74,7 +74,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Square square = new Square(side);
             //Act
-            var actual = square.GetPerimiter();
+            var actual = square.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),

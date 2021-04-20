@@ -51,14 +51,14 @@ namespace Shapes___inlämning_TDD
 
         [TestCase(1, 6.28f)]
         [TestCase(5, 31.42f)]
-        public void GetPerimiter_PositiveValues_ReturnArea(
+        public void GetPerimeter_PositiveValues_ReturnArea(
             float radius,
             float expected)
         {
             //Arrange
             Circle circle = new Circle(radius);
             //Act
-            var actual = circle.GetPerimiter();
+            var actual = circle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 2, MidpointRounding.ToEven),
@@ -70,7 +70,7 @@ namespace Shapes___inlämning_TDD
         [TestCase(-1, 0)]
         [TestCase(-100, 0)]
 
-        public void GetPerimiter_NegativeOrZeroValues_ReturnZero(
+        public void GetPerimeter_NegativeOrZeroValues_ReturnZero(
 
             float radius,
             float expected)
@@ -78,7 +78,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Circle circle = new Circle(radius);
             //Act
-            var actual = circle.GetPerimiter();
+            var actual = circle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 2, MidpointRounding.ToEven),

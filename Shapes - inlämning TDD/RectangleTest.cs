@@ -56,7 +56,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Rectangle rectangle = new Rectangle(height, width);
             //Act
-            var actual = rectangle.GetPerimiter();
+            var actual = rectangle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),
@@ -77,7 +77,7 @@ namespace Shapes___inlämning_TDD
             //Arrange
             Rectangle rectangle = new Rectangle(height, width);
             //Act
-            var actual = rectangle.GetPerimiter();
+            var actual = rectangle.GetPerimeter();
             //Assert
             Assert.That
                 (MathF.Round(actual, 4, MidpointRounding.ToEven),

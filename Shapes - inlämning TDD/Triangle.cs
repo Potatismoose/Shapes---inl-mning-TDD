@@ -2,7 +2,7 @@
 
 namespace Shapes___inlämning_TDD
 {
-    internal class Triangle
+    internal class Triangle : IGeometricThing
     {
         public Triangle(float baseMeasure, float heightMeasure)
         {
@@ -12,7 +12,7 @@ namespace Shapes___inlämning_TDD
         public float Height { get; set; }
         public float Base { get; set; }
 
-        internal float CalculateArea()
+        public float CalculateArea()
         {
             if (Base <= 0 || Height <= 0)
             { 
@@ -22,7 +22,7 @@ namespace Shapes___inlämning_TDD
             return 0.5f * Base * Height;
         }
 
-        internal float GetPerimiter()
+        public float GetPerimeter()
         {
             if (Base <= 0 || Height <= 0)
             {
