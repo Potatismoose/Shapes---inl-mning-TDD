@@ -14,14 +14,24 @@ namespace Shapes___inlämning_TDD
         public float Height { get; set; }
         public float Width { get; set; }
 
-        internal float CalculateArea(Rectangle rectangle)
+        public float CalculateArea()
         {
-            if (rectangle.Height < 0 || rectangle.Width < 0)
+            if (Height <= 0 || Width <= 0)
             {
                 return 0;
             }
 
-            return rectangle.Height * rectangle.Width;
+            return Height * Width;
+        }
+
+        internal float GetPerimiter()
+        {
+            if (Height <= 0 || Width <= 0)
+            {
+                return 0;
+            }
+
+            return (Height * 2) + (Width * 2);
         }
     }
 }

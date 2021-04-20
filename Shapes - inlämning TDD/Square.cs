@@ -11,15 +11,25 @@ namespace Shapes___inlämning_TDD
 
         public float Side { get; set; }
 
-        internal float CalculateArea(Square square)
+        public float CalculateArea()
         {
             const float ToThePowerOf = 2.0f;
 
-            if (square.Side < 0)
+            if (Side < 0)
             {
                 return 0;
             }
-            return MathF.Pow(square.Side, ToThePowerOf);
+            return MathF.Pow(Side, ToThePowerOf);
+        }
+
+        internal float GetPerimiter()
+        {
+            if (Side <= 0)
+            {
+                return 0;
+            }
+
+            return Side * 4;
         }
     }
 }

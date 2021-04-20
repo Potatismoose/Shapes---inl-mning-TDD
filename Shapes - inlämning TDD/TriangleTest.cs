@@ -1,0 +1,94 @@
+﻿#pragma warning disable S4144 // Methods should not have identical implementations
+using System;
+using System.Collections.Generic;
+using System.Text;
+using NUnit.Framework;
+
+namespace Shapes___inlämning_TDD
+{
+    [TestFixture]
+    class TriangleTest
+    {
+        [TestCase(10, 5, 25f)]
+        [TestCase(1, 10, 5f)]
+        [TestCase(100, 100, 5000f)]
+        public void CalculateArea_PositiveValues_ReturnArea(
+            float baseMeasure,
+            float heightMeasure,
+            float expected)
+        {
+            //Arrange
+            Triangle triangle = new Triangle(baseMeasure, heightMeasure);
+            //Act
+            var actual = triangle.CalculateArea();
+            //Assert
+            Assert.That
+                (MathF.Round(actual, 4, MidpointRounding.ToEven),
+                Is.EqualTo
+                (MathF.Round(expected, 4, MidpointRounding.ToEven)));
+        }
+
+        [TestCase(0, 5, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(5, 0, 0)]
+        [TestCase(-1, 5, 0)]
+        [TestCase(-10, -5, 0)]
+        public void CalculateArea_NegativeOrZeroValues_ReturnZero(
+            float baseMeasure,
+            float heightMeasure,
+            float expected)
+        {
+            //Arrange
+            Triangle triangle = new Triangle(baseMeasure, heightMeasure);
+            //Act
+            var actual = triangle.CalculateArea();
+            //Assert
+            Assert.That
+                (MathF.Round(actual, 4, MidpointRounding.ToEven),
+                Is.EqualTo
+                (Math.Round(expected, 4, MidpointRounding.ToEven)));
+        }
+
+        [TestCase(0, 5, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(5, 0, 0)]
+        [TestCase(-1, 5, 0)]
+        [TestCase(-10, -5, 0)]
+        public void GetPerimiter_NegativeOrZeroValues_ReturnZero(
+            float baseMeasure,
+            float heightMeasure,
+            float expected)
+        {
+            //Arrange
+            Triangle triangle = new Triangle(baseMeasure, heightMeasure);
+            //Act
+            var actual = triangle.GetPerimiter();
+            //Assert
+            Assert.That
+                (MathF.Round(actual, 4, MidpointRounding.ToEven),
+                Is.EqualTo
+                (Math.Round(expected, 4, MidpointRounding.ToEven)));
+        }
+
+
+        [TestCase(10, 8.660254037f, 30)]
+        [TestCase(1, 0.8660254037f, 3)]
+        [TestCase(100, 86.60254037f, 300)]
+        public void GetPerimiter_PositiveValues_ReturnPerimiter(
+            float baseMeasure,
+            float heightMeasure,
+            float expected)
+        {
+            //Arrange
+            Triangle triangle = new Triangle(baseMeasure, heightMeasure);
+            //Act
+            var actual = triangle.GetPerimiter();
+            //Assert
+            Assert.That
+                (MathF.Round(actual, 4, MidpointRounding.ToEven),
+                Is.EqualTo
+                (Math.Round(expected, 4, MidpointRounding.ToEven)));
+        }
+    }
+}
+#pragma warning restore S4144 // Methods should not have identical implementations
