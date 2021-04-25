@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shapes___inlämning_TDD
+﻿namespace Shapes___inlämning_TDD
 {
-    class GeoMetricCalculator
+    public class GeoMetricCalculator
     {
-
-        public float GetPerimiter(IGeometricThing[] shapes)
+        public float GetPerimeter(IGeometricThing[] shapes)
         {
             float result = 0f;
             if (shapes == null)
@@ -22,6 +17,7 @@ namespace Shapes___inlämning_TDD
                     result += 0;
                     continue;
                 }
+
                 result += shape.GetPerimeter();
             }
             return result;

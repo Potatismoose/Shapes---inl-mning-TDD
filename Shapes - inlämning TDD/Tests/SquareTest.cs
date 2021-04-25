@@ -1,4 +1,5 @@
 #pragma warning disable S4144 // Methods should not have identical implementations
+
 using NUnit.Framework;
 using System;
 
@@ -16,7 +17,7 @@ namespace Shapes___inlämning_TDD
         [TestCase(49.4f, 2440.36f)]
         [TestCase(2.3f, 5.29f)]
         public void CalculateArea_PositiveValues_ReturnArea(
-            float side, 
+            float side,
             float expected)
         {
             //Arrange
@@ -26,7 +27,6 @@ namespace Shapes___inlämning_TDD
             //Assert
             Assert.That(Math.Round(actual, 4), Is.EqualTo(Math.Round(expected, 4)));
         }
-
 
         [TestCase(0f, 0f)]
         [TestCase(-1f, 0f)]
@@ -47,7 +47,7 @@ namespace Shapes___inlämning_TDD
         [TestCase(-47, 0)]
         [TestCase(-1, 0)]
         [TestCase(-10, 0)]
-        public void GetPerimiter_NegativeOrZeroValues_ReturnZero(
+        public void GetPerimeter_NegativeOrZeroValues_ReturnZero(
             float side,
             float expected)
         {
@@ -67,8 +67,8 @@ namespace Shapes___inlämning_TDD
         [TestCase(6, 24)]
         [TestCase(1, 4)]
         [TestCase(11, 44)]
-        public void GetPerimiter_PositiveValues_ReturnPerimiter(
-            float side,            
+        public void GetPerimeter_PositiveValues_ReturnPerimeter(
+            float side,
             float expected)
         {
             //Arrange
@@ -83,4 +83,5 @@ namespace Shapes___inlämning_TDD
         }
     }
 }
+
 #pragma warning restore S4144 // Methods should not have identical implementations

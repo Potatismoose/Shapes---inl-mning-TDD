@@ -1,16 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Shapes___inlämning_TDD
 {
-    class Circle : IGeometricThing
+    //Comments for interface implemented methods are in the interface class
+    public class Circle : IGeometricThing
     {
+        /// <summary>
+        /// Constructor for a circle
+        /// </summary>
+        /// <param name="radius">Takes a float as the radius.</param>
         public Circle(float radius)
         {
             Radius = radius;
         }
-
+        /// <summary>
+        /// Property for radius
+        /// </summary>
         public float Radius { get; set; }
 
         public float CalculateArea()

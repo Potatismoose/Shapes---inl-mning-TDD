@@ -1,13 +1,12 @@
 ﻿#pragma warning disable S4144 // Methods should not have identical implementations
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 using NUnit.Framework;
+using System;
 
 namespace Shapes___inlämning_TDD
 {
     [TestFixture]
-    class TriangleTest
+    public class TriangleTest
     {
         [TestCase(10, 5, 25f)]
         [TestCase(1, 10, 5f)]
@@ -54,7 +53,7 @@ namespace Shapes___inlämning_TDD
         [TestCase(5, 0, 0)]
         [TestCase(-1, 5, 0)]
         [TestCase(-10, -5, 0)]
-        public void GetPerimiter_NegativeOrZeroValues_ReturnZero(
+        public void GetPerimeter_NegativeOrZeroValues_ReturnZero(
             float baseMeasure,
             float heightMeasure,
             float expected)
@@ -70,11 +69,10 @@ namespace Shapes___inlämning_TDD
                 (Math.Round(expected, 4, MidpointRounding.ToEven)));
         }
 
-
         [TestCase(10, 8.660254037f, 30)]
         [TestCase(1, 0.8660254037f, 3)]
         [TestCase(100, 86.60254037f, 300)]
-        public void GetPerimiter_PositiveValues_ReturnPerimiter(
+        public void GetPerimeter_PositiveValues_ReturnPerimeter(
             float baseMeasure,
             float heightMeasure,
             float expected)
@@ -91,4 +89,5 @@ namespace Shapes___inlämning_TDD
         }
     }
 }
+
 #pragma warning restore S4144 // Methods should not have identical implementations

@@ -1,14 +1,12 @@
 ﻿#pragma warning disable S4144 // Methods should not have identical implementations
-using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnit.Framework;
 
+using NUnit.Framework;
+using System;
 
 namespace Shapes___inlämning_TDD
 {
     [TestFixture]
-    class CircleTest
+    public class CircleTest
     {
         [TestCase(1, 3.1416f)]
         [TestCase(5, 78.5398f)]
@@ -30,7 +28,6 @@ namespace Shapes___inlämning_TDD
         [TestCase(0, 0)]
         [TestCase(-1, 0)]
         [TestCase(-100, 0)]
-
         public void CalculateArea_NegativeOrZeroValues_ReturnZero(
 
             float radius,
@@ -46,8 +43,6 @@ namespace Shapes___inlämning_TDD
                 Is.EqualTo
                 (Math.Round(expected, 4, MidpointRounding.ToEven)));
         }
-
-
 
         [TestCase(1, 6.28f)]
         [TestCase(5, 31.42f)]
@@ -69,7 +64,6 @@ namespace Shapes___inlämning_TDD
         [TestCase(0, 0)]
         [TestCase(-1, 0)]
         [TestCase(-100, 0)]
-
         public void GetPerimeter_NegativeOrZeroValues_ReturnZero(
 
             float radius,
@@ -85,8 +79,7 @@ namespace Shapes___inlämning_TDD
                 Is.EqualTo
                 (MathF.Round(expected, 2, MidpointRounding.ToEven)));
         }
-
-
     }
 }
+
 #pragma warning restore S4144 // Methods should not have identical implementations
