@@ -8,6 +8,30 @@ namespace Shapes___inlämning_TDD
     [TestFixture]
     public class SquareTest
     {
+        /// <summary>
+        /// Testing for CalculateArea of the square shape. Takes negative or zero values
+        /// </summary>
+        /// <param name="side">Takes a side of the square</param>
+        /// <param name="expected">Expected result</param>
+        [TestCase(0f, 0f)]
+        [TestCase(-1f, 0f)]
+        public void CalculateArea_NegativeOrZeroValues_ReturnZero(
+            float side,
+            float expected)
+        {
+            //Arrange
+            Square square = new Square(side);
+            //Act
+            var actual = square.CalculateArea();
+            //Assert
+            Assert.That(Math.Round(actual, 4), Is.EqualTo(Math.Round(expected, 4)));
+        }
+
+        /// <summary>
+        /// Testing for CalculateArea of the square shape. Takes positive values
+        /// </summary>
+        /// <param name="side">Takes a side of the square</param>
+        /// <param name="expected">Expected result</param>
         [TestCase(5, 25)]
         [TestCase(4, 16)]
         [TestCase(0.5f, 0.25f)]
@@ -27,21 +51,11 @@ namespace Shapes___inlämning_TDD
             //Assert
             Assert.That(Math.Round(actual, 4), Is.EqualTo(Math.Round(expected, 4)));
         }
-
-        [TestCase(0f, 0f)]
-        [TestCase(-1f, 0f)]
-        public void CalculateArea_NegativeOrZeroValues_ReturnZero(
-            float side,
-            float expected)
-        {
-            //Arrange
-            Square square = new Square(side);
-            //Act
-            var actual = square.CalculateArea();
-            //Assert
-            Assert.That(Math.Round(actual, 4), Is.EqualTo(Math.Round(expected, 4)));
-        }
-
+        /// <summary>
+        /// Testing the GetPerimeter method of the square. Takes negative or zero values.
+        /// </summary>
+        /// <param name="side">takes a side of the square</param>
+        /// <param name="expected">expected result</param>
         [TestCase(0, 0)]
         [TestCase(-2.45f, 0)]
         [TestCase(-47, 0)]
@@ -62,6 +76,11 @@ namespace Shapes___inlämning_TDD
                 (MathF.Round(expected, 4, MidpointRounding.ToEven)));
         }
 
+        /// <summary>
+        /// Testing GetPerimeter method of the square. Takes positive values
+        /// </summary>
+        /// <param name="side">Side measurement of the square</param>
+        /// <param name="expected">Expected result</param>
         [TestCase(17.4225f, 69.69f)]
         [TestCase(10.45f, 41.8f)]
         [TestCase(6, 24)]

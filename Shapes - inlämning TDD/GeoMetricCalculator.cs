@@ -2,6 +2,11 @@
 {
     public class GeoMetricCalculator
     {
+        /// <summary>
+        /// Calculates and returns a value for the shapes total perimiter.
+        /// </summary>
+        /// <param name="shapes">Takes a list with shapes</param>
+        /// <returns>Returns the total perimeter of the shapes</returns>
         public float GetPerimeter(IGeometricThing[] shapes)
         {
             float result = 0f;

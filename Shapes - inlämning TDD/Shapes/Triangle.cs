@@ -15,14 +15,14 @@
         }
 
         /// <summary>
-        /// Property for height measurement
-        /// </summary>
-        public float Height { get; set; }
-        /// <summary>
         /// Property for base measurement
         /// </summary>
         public float Base { get; set; }
 
+        /// <summary>
+        /// Property for height measurement
+        /// </summary>
+        public float Height { get; set; }
         public float CalculateArea()
         {
             if (Base <= 0 || Height <= 0)
